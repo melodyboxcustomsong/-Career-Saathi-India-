@@ -1,46 +1,681 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Career Saathi India</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aarav & Ananya | Wedding Invitation</title>
+  <meta name="description" content="Aarav Sharma and Ananya Kapoor's wedding invitation - 12 February 2027" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkR4j8zJ+f6fQfXkM54L7Nf8fHhM7x1Y2xgA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    :root {
+      --maroon: #7a1f3d;
+      --deep-maroon: #5c0f2a;
+      --gold: #c7a34a;
+      --cream: #f8f1e7;
+      --rose: #f2d7d2;
+      --text: #2f1e1e;
+      --white: #ffffff;
+      --card-bg: rgba(255, 255, 255, 0.82);
+      --shadow: 0 10px 30px rgba(122, 31, 61, 0.18);
+      scroll-behavior: smooth;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(circle at 1px 1px, rgba(199, 163, 74, 0.14) 1px, transparent 0);
+      background-size: 24px 24px;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(92, 15, 42, 0.88);
+      backdrop-filter: blur(8px);
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .nav-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.8rem;
+      color: #fcecc8;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.88rem;
+      padding: 0.2rem 0.4rem;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #f5d58d;
+    }
+
+    .hero {
+      min-height: 100svh;
+      position: relative;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: #fff;
+      padding: 8rem 1rem 3rem;
+      background: linear-gradient(rgba(35, 8, 19, 0.56), rgba(35, 8, 19, 0.56)),
+        url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      animation: fadeUp 1.3s ease both;
+    }
+
+    .hero h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(2.5rem, 8vw, 5.2rem);
+      margin-bottom: 0.4rem;
+      text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .hero h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 5vw, 2.7rem);
+      letter-spacing: 1px;
+      margin-bottom: 0.7rem;
+      animation: pulseText 3s ease-in-out infinite;
+    }
+
+    .date {
+      font-size: clamp(1rem, 3.2vw, 1.35rem);
+      color: #ffe8aa;
+      margin-bottom: 1.6rem;
+      font-weight: 500;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(70px, 110px));
+      justify-content: center;
+      gap: 0.7rem;
+    }
+
+    .time-box {
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 12px;
+      padding: 0.7rem 0.4rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .time-box span {
+      display: block;
+      font-weight: 700;
+      font-size: clamp(1.2rem, 4vw, 1.9rem);
+    }
+
+    .time-box small {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #f8f2dd;
+    }
+
+    .music-btn {
+      margin-top: 1.2rem;
+      border: none;
+      background: linear-gradient(135deg, #f3ce72, #c49638);
+      color: #5d112d;
+      padding: 0.7rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .music-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 1rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--deep-maroon);
+      margin-bottom: 2.2rem;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '❦';
+      display: block;
+      color: var(--gold);
+      margin-top: 0.1rem;
+      font-size: 1.2rem;
+    }
+
+    .story {
+      background: linear-gradient(180deg, #fff7f0, #fffdf9);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      padding: 2rem 1.2rem;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 700px;
+      margin: 0 auto;
+      padding-left: 1.2rem;
+      border-left: 3px solid var(--gold);
+    }
+
+    .timeline-item {
+      margin-bottom: 1.4rem;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.6rem;
+      top: 0.4rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--maroon);
+      border: 2px solid #f8d98e;
+    }
+
+    .timeline-item h3 {
+      color: var(--maroon);
+      font-size: 1.1rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .events-grid, .gallery, .family-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .events-grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .event-card, .family-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 1.2rem;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(199, 163, 74, 0.35);
+      transition: transform 0.35s, box-shadow 0.35s;
+    }
+
+    .event-card:hover, .family-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 15px 35px rgba(92, 15, 42, 0.25);
+    }
+
+    .event-card i, .family-card i {
+      font-size: 1.5rem;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .event-card h3, .family-card h3 {
+      color: var(--deep-maroon);
+      margin-bottom: 0.6rem;
+      font-size: 1.15rem;
+    }
+
+    .gallery {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .gallery figure {
+      overflow: hidden;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      min-height: 210px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+      display: block;
+    }
+
+    .gallery figure:hover img {
+      transform: scale(1.08);
+    }
+
+    .venue-wrap {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      background: linear-gradient(140deg, #fffaf5, #fff2e8);
+      padding: 1rem;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    iframe {
+      width: 100%;
+      min-height: 320px;
+      border: 0;
+      border-radius: 14px;
+    }
+
+    .venue-details {
+      padding: 0.6rem;
+    }
+
+    .venue-details p {
+      margin-top: 0.4rem;
+    }
+
+    .family-grid {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .rsvp {
+      background: linear-gradient(155deg, #65203a, #802f4f);
+      color: #fff;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      padding: 2rem 1rem;
+    }
+
+    form {
+      max-width: 680px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+    }
+
+    input, select, button[type='submit'] {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 0.8rem 0.9rem;
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
+    input, select {
+      background: rgba(255,255,255,0.92);
+      color: #3c1d2a;
+    }
+
+    button[type='submit'] {
+      border: none;
+      background: linear-gradient(135deg, #f7d989, #c39a43);
+      color: #4f1228;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    button[type='submit']:hover {
+      transform: translateY(-2px);
+    }
+
+    .form-note {
+      text-align: center;
+      font-size: 0.85rem;
+      opacity: 0.9;
+      margin-top: 0.6rem;
+    }
+
+    footer {
+      text-align: center;
+      background: #430f24;
+      color: #f5ebd2;
+      padding: 2rem 1rem 2.5rem;
+    }
+
+    footer h3 {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      margin: 0.5rem 0;
+    }
+
+    .symbols {
+      margin-top: 0.9rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      color: #f2cd7b;
+      font-size: 1.4rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulseText {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.75; }
+    }
+
+    @media (min-width: 760px) {
+      .venue-wrap {
+        grid-template-columns: 1.2fr 1fr;
+        align-items: center;
+      }
+
+      form {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      form button,
+      form .form-note {
+        grid-column: 1 / -1;
+      }
+    }
+  </style>
 </head>
 <body>
+  <nav class="top-nav">
+    <div class="nav-wrap">
+      <div class="brand">Aarav ❤️ Ananya</div>
+      <div class="nav-links">
+        <a href="#story">Love Story</a>
+        <a href="#events">Events</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#venue">Venue</a>
+        <a href="#family">Family</a>
+        <a href="#rsvp">RSVP</a>
+      </div>
+    </div>
+  </nav>
 
-<nav>
-<h2>Career Saathi 🇮🇳</h2>
-<div>
-<a href="index.html">Home</a>
-<a href="resources.html">Resources</a>
-<a href="resume.html">Resume Tips</a>
-</div>
-</nav>
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <h1>Aarav Sharma &amp; Ananya Kapoor</h1>
+      <h2>We Are Getting Married</h2>
+      <p class="date"><i class="fa-solid fa-calendar-days"></i> 12 February 2027</p>
+      <div class="countdown" id="countdown">
+        <div class="time-box"><span id="days">0</span><small>Days</small></div>
+        <div class="time-box"><span id="hours">0</span><small>Hours</small></div>
+        <div class="time-box"><span id="minutes">0</span><small>Minutes</small></div>
+        <div class="time-box"><span id="seconds">0</span><small>Seconds</small></div>
+      </div>
+      <button class="music-btn" id="musicControl"><i class="fa-solid fa-music"></i> Play Music</button>
+      <audio id="bgMusic" loop preload="none">
+        <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_e56824395f.mp3?filename=romantic-sentimental-background-music-13716.mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+  </header>
 
-<header>
-<h1>India ke Students ke liye Free Career Guidance</h1>
-<p>Government Jobs • Private Jobs • Skill Courses • Resume Help</p>
-<a href="resources.html" class="btn">Explore Career Options</a>
-</header>
+  <section id="story" class="reveal">
+    <h2 class="section-title">Our Love Story</h2>
+    <div class="story">
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>First Meeting</h3>
+          <p>Aarav and Ananya first met at a college cultural fest in Delhi, where a shared laugh over a cup of chai turned into an unforgettable conversation.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Friendship to Forever</h3>
+          <p>What began as friendship blossomed into love through years of support, dreams, and countless sunsets spent planning a beautiful future together.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>The Proposal</h3>
+          <p>Under a sky full of stars, Aarav proposed with heartfelt words and folded hands before their families, beginning their journey toward sacred wedding vows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="problem">
-<h2>India ki Badi Problem</h2>
-<p>Bahut students ko sahi direction nahi milti. Fake job offers aur wrong guidance se career waste ho jata hai.</p>
-</section>
+  <section id="events" class="reveal">
+    <h2 class="section-title">Wedding Events</h2>
+    <div class="events-grid">
+      <article class="event-card">
+        <i class="fa-solid fa-hand-sparkles"></i>
+        <h3>Mehndi Ceremony</h3>
+        <p><strong>Date:</strong> 10 February 2027</p>
+        <p><strong>Time:</strong> 5:00 PM</p>
+        <p><strong>Venue:</strong> Sharma Residence</p>
+      </article>
+      <article class="event-card">
+        <i class="fa-solid fa-sun"></i>
+        <h3>Haldi Ceremony</h3>
+        <p><strong>Date:</strong> 11 February 2027</p>
+        <p><strong>Time:</strong> 11:00 AM</p>
+        <p><strong>Venue:</strong> Kapoor Residence</p>
+      </article>
+      <article class="event-card">
+        <i class="fa-solid fa-ring"></i>
+        <h3>Wedding Ceremony</h3>
+        <p><strong>Date:</strong> 12 February 2027</p>
+        <p><strong>Time:</strong> 7:00 PM</p>
+        <p><strong>Venue:</strong> Royal Palace Banquet Hall</p>
+      </article>
+      <article class="event-card">
+        <i class="fa-solid fa-champagne-glasses"></i>
+        <h3>Reception</h3>
+        <p><strong>Date:</strong> 13 February 2027</p>
+        <p><strong>Time:</strong> 8:00 PM</p>
+        <p><strong>Venue:</strong> Grand Celebration Hall</p>
+      </article>
+    </div>
+  </section>
 
-<section class="solution">
-<h2>Hamari Solution</h2>
-<ul>
-<li>✔ Free Skill Course List</li>
-<li>✔ Government Job Official Links Guide</li>
-<li>✔ Resume Format Help</li>
-<li>✔ Scam Alert Tips</li>
-</ul>
-</section>
+  <section id="gallery" class="reveal">
+    <h2 class="section-title">Moments of Love</h2>
+    <div class="gallery">
+      <figure><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80" alt="Couple portrait" loading="lazy"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=900&q=80" alt="Wedding joy" loading="lazy"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80" alt="Bride and groom smile" loading="lazy"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=900&q=80" alt="Indian wedding rituals" loading="lazy"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=80" alt="Romantic moment" loading="lazy"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80" alt="Elegant couple" loading="lazy"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=900&q=80" alt="Celebration dance" loading="lazy"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=900&q=80" alt="Wedding details" loading="lazy"></figure>
+    </div>
+  </section>
 
-<footer>
-<p>© 2026 Career Saathi India</p>
-</footer>
+  <section id="venue" class="reveal">
+    <h2 class="section-title">Venue</h2>
+    <div class="venue-wrap">
+      <iframe
+        title="Royal Palace Banquet Hall Map"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Royal+Palace+Banquet+Hall+Delhi&output=embed">
+      </iframe>
+      <div class="venue-details">
+        <h3><i class="fa-solid fa-location-dot"></i> Royal Palace Banquet Hall</h3>
+        <p>Sector 18, Dwarka, New Delhi, India</p>
+        <p><strong>Wedding Muhurat:</strong> 7:00 PM onward, 12 February 2027</p>
+        <p>We look forward to celebrating this sacred union with your blessings.</p>
+      </div>
+    </div>
+  </section>
 
+  <section id="family" class="reveal">
+    <h2 class="section-title">Families</h2>
+    <div class="family-grid">
+      <article class="family-card">
+        <i class="fa-solid fa-people-roof"></i>
+        <h3>Bride Family</h3>
+        <p><strong>Kapoor Family</strong></p>
+        <p>Warmly invites you to grace the celebrations and bless the couple.</p>
+      </article>
+      <article class="family-card">
+        <i class="fa-solid fa-house-chimney-user"></i>
+        <h3>Groom Family</h3>
+        <p><strong>Sharma Family</strong></p>
+        <p>Joyfully welcomes you to share in this beautiful beginning.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="rsvp" class="reveal">
+    <div class="rsvp">
+      <h2 class="section-title" style="color:#fff;">RSVP</h2>
+      <form>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <input type="number" name="guests" placeholder="Number of Guests" min="1" max="10" required>
+        <select name="attendance" required>
+          <option value="" disabled selected>Attendance Status</option>
+          <option value="attending">Attending</option>
+          <option value="not-attending">Not Attending</option>
+        </select>
+        <button type="submit">Submit RSVP</button>
+        <p class="form-note">Demo form only (no backend connected).</p>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>Thank you for being part of our joyous celebration.</p>
+    <h3>With Love – Aarav &amp; Ananya</h3>
+    <div class="symbols">
+      <i class="fa-solid fa-spa" title="Lotus"></i>
+      <i class="fa-solid fa-fire-flame-curved" title="Diya"></i>
+      <i class="fa-solid fa-om" title="Om"></i>
+    </div>
+  </footer>
+
+  <script>
+    const weddingDate = new Date('2027-02-12T19:00:00+05:30').getTime();
+    const countdownEls = {
+      days: document.getElementById('days'),
+      hours: document.getElementById('hours'),
+      minutes: document.getElementById('minutes'),
+      seconds: document.getElementById('seconds')
+    };
+
+    function updateCountdown() {
+      const now = Date.now();
+      const diff = weddingDate - now;
+
+      if (diff <= 0) {
+        countdownEls.days.textContent = '0';
+        countdownEls.hours.textContent = '0';
+        countdownEls.minutes.textContent = '0';
+        countdownEls.seconds.textContent = '0';
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      countdownEls.days.textContent = days;
+      countdownEls.hours.textContent = hours;
+      countdownEls.minutes.textContent = minutes;
+      countdownEls.seconds.textContent = seconds;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealEls.forEach(el => observer.observe(el));
+
+    const music = document.getElementById('bgMusic');
+    const musicControl = document.getElementById('musicControl');
+    let isPlaying = false;
+
+    musicControl.addEventListener('click', async () => {
+      if (!isPlaying) {
+        try {
+          await music.play();
+          isPlaying = true;
+          musicControl.innerHTML = '<i class="fa-solid fa-pause"></i> Pause Music';
+        } catch {
+          musicControl.innerHTML = '<i class="fa-solid fa-music"></i> Tap Again to Play';
+        }
+      } else {
+        music.pause();
+        isPlaying = false;
+        musicControl.innerHTML = '<i class="fa-solid fa-music"></i> Play Music';
+      }
+    });
+
+    document.querySelector('form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you for your RSVP!');
+      e.target.reset();
+    });
+  </script>
 </body>
 </html>
